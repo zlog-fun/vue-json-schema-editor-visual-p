@@ -438,6 +438,31 @@ export default {
       const curFieldPath = [].concat(prefix, name).join(JSONPATH_JOIN_CHAR)
       // console.log(curFieldPath)
       const cloneSchema = cloneDeep(this.schemaData)
+
+      // 删除 required
+      let pRequiredData = null
+      const prefixCopy = cloneDeep(prefix)
+      prefixCopy.pop()
+      if (!prefixCopy.length) {
+        // 一级属性
+        pRequiredData = cloneSchema
+      } else {
+        pRequiredData = get(cloneSchema, prefixCopy.join(JSONPATH_JOIN_CHAR))
+      }
+      const requiredData = [].concat(pRequiredData.required || [])
+      console.log('requiredData old>>>', requiredData)
+      const index = requiredData.indexOf(name)
+      if (index >= 0) {
+        requiredData.splice(index, 1)
+        if (requiredData.length === 0) {
+          deleteData(cloneSchema, prefixCopy.concat('required'))
+        } else {
+          set(cloneSchema, prefixCopy.concat('required'), requiredData)
+        }
+      }
+      console.log('requiredData new >>>', requiredData)
+      // 删除 required end
+
       unset(cloneSchema, curFieldPath)
       this.schemaData = cloneSchema
       this.forceUpdate()

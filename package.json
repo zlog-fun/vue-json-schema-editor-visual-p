@@ -1,6 +1,6 @@
 {
   "name": "vue-json-schema-editor-visual-p",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A json-schema editor of high efficient and easy-to-use, base on Vue.",
   "keywords": [
     "json-schema"
