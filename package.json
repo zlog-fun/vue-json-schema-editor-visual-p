@@ -1,0 +1,65 @@
+{
+  "name": "vue-json-schema-editor-visual-p",
+  "version": "0.0.1",
+  "description": "A json-schema editor of high efficient and easy-to-use, base on Vue.",
+  "keywords": [
+    "json-schema"
+  ],
+  "author": "zlog <logwood.yu@gmail.com>",
+  "homepage": "https://github.com/zlog-fun/vue-json-schema-editor-visual-p",
+  "license": "MIT",
+  "main": "dist/json-schema-editor.min.js",
+  "unpkg": "dist/json-schema-editor.min.js",
+  "directories": {
+    "dist": "dist",
+    "src": "src",
+    "test": "__tests__"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com:zlog-fun/vue-json-schema-editor-visual-p.git"
+  },
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "npm run clean && webpack --config build/webpack.common.js --optimize-max-chunks 1",
+    "lint": "eslint  lib/**/* build/**/* --quiet",
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "dependencies": {
+    "codemirror": "^5.58.1",
+    "element-ui": "2.13.2",
+    "json-schema-faker": "^0.5.0-rcv.24",
+    "lodash": "^4.17.19",
+    "mockjs": "^1.1.0",
+    "vue": "^2.6.11",
+    "json-templater": "^1.2.0",
+    "jsonlint": "^1.6.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.11.6",
+    "babel": "^6.23.0",
+    "babel-loader": "^8.1.0",
+    "css-loader": "^4.1.0",
+    "node-sass": "^4.14.1",
+    "progress-bar-webpack-plugin": "^2.1.0",
+    "sass-loader": "^9.0.2",
+    "script-loader": "^0.7.2",
+    "style-loader": "^1.2.1",
+    "terser-webpack-plugin": "^3.0.8",
+    "uppercamelcase": "^3.0.0",
+    "url-loader": "^4.1.0",
+    "vue-loader": "^15.9.3",
+    "vue-template-compiler": "^2.6.12",
+    "webpack": "^4.44.0",
+    "webpack-cli": "^3.3.12",
+    "webpack-node-externals": "^2.5.0"
+  }
+}
