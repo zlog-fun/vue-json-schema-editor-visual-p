@@ -450,7 +450,6 @@ export default {
         pRequiredData = get(cloneSchema, prefixCopy.join(JSONPATH_JOIN_CHAR))
       }
       const requiredData = [].concat(pRequiredData.required || [])
-      console.log('requiredData old>>>', requiredData)
       const index = requiredData.indexOf(name)
       if (index >= 0) {
         requiredData.splice(index, 1)
@@ -460,9 +459,7 @@ export default {
           set(cloneSchema, prefixCopy.concat('required'), requiredData)
         }
       }
-      console.log('requiredData new >>>', requiredData)
       // 删除 required end
-
       unset(cloneSchema, curFieldPath)
       this.schemaData = cloneSchema
       this.forceUpdate()

@@ -52,6 +52,7 @@ Vue.use(JsonSchemaEditor);
 
 ## changelog
 - fix: number emnu type not int
+- fix: 删除字段时，删除require列表中的字段
 
 ## License
 
